@@ -99,6 +99,13 @@ Grid.prototype.withinBounds = function (position) {
          position.y >= 0 && position.y < this.size;
 };
 
+Grid.prototype.loop = function (position) {
+  if (position.x<0){position.x=this.size-1;}
+  if (position.x>=this.size){position.x=0;}
+  if (position.y<0){position.y=this.size-1;}
+  if (position.y>=this.size){position.y=0;} 
+};
+
 Grid.prototype.serialize = function () {
   var cellState = [];
 
