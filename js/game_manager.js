@@ -230,6 +230,7 @@ GameManager.prototype.findFarthestPosition = function (cell, vector) {
   do {
     previous = cell;
     cell     = { x: previous.x + vector.x, y: previous.y + vector.y };
+    cell = this.grid.loop(cell);
   } while (this.grid.withinBounds(cell) &&
            this.grid.cellAvailable(cell));
 
